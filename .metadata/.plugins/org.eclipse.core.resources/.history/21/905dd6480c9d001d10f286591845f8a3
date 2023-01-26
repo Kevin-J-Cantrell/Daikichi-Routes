@@ -1,0 +1,30 @@
+package com.codingdojo.daikichiroutes.controller;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingdojo.daikichiroutes.DaikichiRoutesApplication;
+
+@RestController
+@RequestMapping("/daikkichi")
+public class DaikichiRoutesController {
+	public static void main(String[] args) {
+		SpringApplication.run(DaikichiRoutesApplication.class, args);
+	}
+	
+	public String first() {
+		return "Welcome!";
+	}
+	
+	@GetMapping("/today")
+	public String second() {
+		return "Today you find luck in all your indeavors!";
+	}
+	
+	@GetMapping("/tomorrow")
+	public String third() {
+		return "tomorrow, an opportunity will arise, so be sure to be open to ne ideas!";
+	}
+}
